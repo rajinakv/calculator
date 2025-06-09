@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button></button>
+    <div style="width: 300px;  height: 60px; background: orange;" id="box"></div> 
+    <input type="text" id="inp">
+    <input type="text"  id="">
+    <div id="error" style="color: red; display: none;">Please enter at least 3 characters</div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+ <script>
+   
+$(document).ready(function(){
+   
+
+    $("#btn").click(function()
+{
+    //alert("Button clicked")
+    //$("#box").toggle(1500)
+    $("#box").fadeToggle(1500)
+    
+})
+
+
+   
+
+   $("#inp").blur(function()
+{
+   //alert("Button clicked")
+   //$("#box").toggle(1500)
+    var text = $(this).val()
+    if(text.length<3)
+{
+    //alert("enterde minimum letters")
+
+   //$("#box").fadeToggle(1500)
+   $("#error").show()
+}
+else
+{
+    $("#error").hide()
+}
+   
+})
+
+
+
+$("#btn").mouseenter(function()
+{
+    $(this).css({"background":"green"})
+
+})
+
+
+$("#btn").mouseleave(function()
+{
+    $(this).css({"background":"red"})
+    
+})
+
+})
+
+
+ </script>
+ <button id="btn">Click me</button>
+
+
+
+</body>
+</html>
